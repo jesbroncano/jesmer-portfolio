@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jesmer Broncano — Virtual Assistant</title>
+<meta name="description" content="Versatile Virtual Assistant with 10+ years of operations experience across aviation, hospitality, and freelance. Admin, e-commerce, social media, digital marketing, AI automation, real estate, and lead generation.">
+<meta name="theme-color" content="#F6F5F2" id="themeColor">
+
+<!-- Rich link previews when the URL is shared -->
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Jesmer Broncano — Virtual Assistant">
+<meta property="og:description" content="One reliable VA, seven specializations, backed by a decade of real operations experience.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Jesmer Broncano — Virtual Assistant">
+<meta name="twitter:description" content="One reliable VA, seven specializations, backed by a decade of real operations experience.">
+
+<!-- Structured data so search engines understand who this is -->
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Jesmer Broncano",
+  "jobTitle":"Virtual Assistant",
+  "email":"mailto:jes.broncano@gmail.com",
+  "telephone":"+639270020443",
+  "address":{"@type":"PostalAddress","addressLocality":"Muntinlupa City","addressRegion":"Metro Manila","addressCountry":"PH"},
+  "alumniOf":{"@type":"CollegeOrUniversity","name":"Bachelor's Degree in Information Technology"},
+  "knowsAbout":["Administrative Support","E-commerce Management","Social Media Management","Digital Marketing","AI & Workflow Automation","Real Estate Support","Lead Generation & Cold Outreach"],
+  "worksFor":{"@type":"Organization","name":"Freelance"}
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Theme tokens ---------- */
+  :root{
+    --bg:#F6F5F2; --surface:#FFFFFF; --ink:#1D1E1C; --muted:#6C6B66;
+    --accent:#2E4B6B; --accent-2:#9A6B33; --tint:#EDF0F4; --line:#E6E4DE;
+    --shadow:0 24px 50px -32px rgba(29,30,28,.35);
+    --radius:14px; --maxw:1120px;
+  }
+  :root[data-theme="dark"]{
+    --bg:#15171A; --surface:#1E2126; --ink:#ECEBE7; --muted:#9A9A93;
+    --accent:#89AEDA; --accent-2:#D3A86A; --tint:#212A3A; --line:#2C3037;
+    --shadow:0 24px 50px -30px rgba(0,0,0,.6);
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#15171A; --surface:#1E2126; --ink:#ECEBE7; --muted:#9A9A93;
+      --accent:#89AEDA; --accent-2:#D3A86A; --tint:#212A3A; --line:#2C3037;
+      --shadow:0 24px 50px -30px rgba(0,0,0,.6);
+    }
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Hanken Grotesk',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 26px}
+  h1,h2,h3{font-family:'Newsreader',Georgia,serif;line-height:1.12;letter-spacing:-.01em;font-weight:500}
+  a{color:inherit}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-2);font-weight:500}
+
+  .skip{position:absolute;left:-999px;top:0;background:var(--accent);color:#fff;padding:10px 16px;border-radius:0 0 8px 0;z-index:200}
+  .skip:focus{left:0}
+
+  /* ---------- Scroll progress (pure CSS) ---------- */
+  .progress{position:fixed;top:0;left:0;height:3px;width:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);z-index:120;animation:grow linear;animation-timeline:scroll(root)}
+  @keyframes grow{to{transform:scaleX(1)}}
+
+  /* ---------- Scroll-driven reveal (pure CSS, no JS) ---------- */
+  .reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% cover 28%}
+  @keyframes reveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  @supports not (animation-timeline:view()){.reveal{opacity:1;transform:none}}
+
+  /* ---------- Header ---------- */
+  header{position:sticky;top:0;z-index:80;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-family:'Newsreader';font-weight:600;font-size:1.2rem}
+  .nav-right{display:flex;align-items:center;gap:24px}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{font-size:.92rem;text-decoration:none;color:var(--muted);transition:color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:10px 18px;border-radius:100px;font-weight:600;font-size:.9rem;text-decoration:none;transition:filter .2s,transform .2s;border:0;cursor:pointer;font-family:inherit}
+  .btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{border-color:var(--ink);filter:none}
+  .theme-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--ink);transition:border-color .2s}
+  .theme-btn:hover{border-color:var(--accent)}
+  .theme-btn svg{width:18px;height:18px}
+  .menu-toggle{display:none;background:none;border:0;font-size:1.5rem;cursor:pointer;color:var(--ink)}
+
+  /* ---------- Hero ---------- */
+  .hero{padding:88px 0 72px}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .hero h1{font-size:clamp(2.4rem,5.2vw,3.8rem);margin:18px 0 20px}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero .lede{font-size:1.14rem;color:var(--muted);max-width:46ch;margin-bottom:26px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+  .stats{display:flex;gap:38px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--line)}
+  .stat b{font-family:'Newsreader';font-size:2rem;font-weight:600;color:var(--ink);display:block;line-height:1}
+  .stat span{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- Specialization switcher ---------- */
+  .switcher{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+  .sw-head{padding:16px 22px;border-bottom:1px solid var(--line);font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .tabs{display:flex;flex-wrap:wrap;gap:7px;padding:16px 16px 6px}
+  .tab{font-family:'IBM Plex Mono',monospace;font-size:.76rem;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:100px;padding:7px 13px;cursor:pointer;transition:all .18s;white-space:nowrap}
+  .tab:hover{border-color:var(--accent);color:var(--ink)}
+  .tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .panel-inner{container-type:inline-size;padding:18px 22px 26px}
+  .panel h3{font-size:1.4rem;margin-bottom:6px}
+  .panel .pitch{color:var(--muted);margin-bottom:18px}
+  .cols{display:grid;grid-template-columns:1fr;gap:20px}
+  @container (min-width:500px){.cols{grid-template-columns:1fr 1fr}}
+  .cap{font-family:'IBM Plex Mono',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin-bottom:10px;display:block}
+  .panel ul{list-style:none}
+  .panel li{font-size:.92rem;color:var(--ink);padding:5px 0 5px 20px;position:relative}
+  .panel li::before{content:"→";position:absolute;left:0;color:var(--accent);font-family:'IBM Plex Mono',monospace}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips b{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:.73rem;color:var(--muted);background:var(--tint);border-radius:6px;padding:5px 9px}
+
+  /* ---------- Sections ---------- */
+  section{padding:76px 0}
+  .section-head{max-width:640px;margin-bottom:42px}
+  .section-head h2{font-size:clamp(1.9rem,4vw,2.7rem);margin:12px 0 12px}
+  .section-head p{color:var(--muted);font-size:1.05rem}
+
+  .why{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .why-card .ic{width:42px;height:42px;border-radius:11px;background:var(--tint);color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono';font-size:.9rem}
+  .why-card .k{font-family:'Newsreader';font-size:1.3rem;font-weight:500;margin:14px 0 6px}
+  .why-card p{color:var(--muted);font-size:.95rem}
+
+  .timeline{margin-top:8px}
+  .tl-item{display:grid;grid-template-columns:140px 1fr;gap:26px;padding:24px 0;border-top:1px solid var(--line)}
+  .tl-item:first-child{border-top:0}
+  .tl-when{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--accent-2);padding-top:5px}
+  .tl-what h3{font-size:1.25rem;margin-bottom:3px}
+  .tl-what .org{color:var(--muted);font-size:.95rem;margin-bottom:9px}
+  .tl-what p{color:var(--muted);font-size:.94rem}
+
+  .contact{text-align:center}
+  .contact h2{font-size:clamp(2rem,5vw,3.1rem);margin:14px 0 16px}
+  .contact p{color:var(--muted);font-size:1.08rem;max-width:48ch;margin:0 auto 28px}
+  .contact-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .contact-meta{margin-top:28px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--muted);display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
+  .contact-meta a{color:var(--muted);text-decoration:none}
+  .contact-meta a:hover{color:var(--ink)}
+
+  footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+  /* Printable full list (hidden on screen) */
+  .print-only{display:none}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .why-grid{grid-template-columns:1fr}
+    .tl-item{grid-template-columns:1fr;gap:6px}
+    .nav-links{position:absolute;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;padding:8px 26px 18px;border-bottom:1px solid var(--line);display:none}
+    .nav-links.open{display:flex}
+    .nav-links a{padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
+    .menu-toggle{display:block}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .reveal{animation:none;opacity:1;transform:none}
+    *{transition:none!important}
+  }
+  a:focus-visible,.btn:focus-visible,.tab:focus-visible,.theme-btn:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+  /* ---------- Print: clean one-page CV ---------- */
+  @media print{
+    :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--line:#ccc}
+    header,.progress,.hero-cta,.theme-btn,.menu-toggle,.switcher,.contact-row,footer,.nav-right{display:none!important}
+    section{padding:16px 0;break-inside:avoid}
+    .hero{padding:8px 0}
+    .print-only{display:block;margin-top:14px}
+    .print-only h3{font-size:1rem;margin:12px 0 2px}
+    .print-only .pt{font-size:.82rem;color:#333}
+    .reveal{opacity:1!important;transform:none!important}
+    a{text-decoration:none;color:#000}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#specializations">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <div class="brand">Jesmer Broncano</div>
+    <div class="nav-right">
+      <nav class="nav-links" id="navLinks">
+        <a href="#specializations">Specializations</a>
+        <a href="#why">Why me</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme"></button>
+      <a href="#contact" class="btn">Hire me</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Virtual Assistant · Metro Manila, PH</span>
+      <h1>One reliable VA, ready to take work <em>off your plate</em>.</h1>
+      <p class="lede">I'm Jesmer — a process-driven virtual assistant with 10+ years running real operations. Choose the support you need and see exactly how I can help.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn">Start a project</a>
+        <a href="#specializations" class="btn ghost">Explore specializations</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>10+</b><span>Years experience</span></div>
+        <div class="stat"><b>7</b><span>Specializations</span></div>
+        <div class="stat"><b>3</b><span>Industries</span></div>
+      </div>
+    </div>
+
+    <div class="switcher reveal" id="specializations">
+      <div class="sw-head">Select a specialization</div>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Specializations"></div>
+      <div class="panel-inner"><div class="panel" id="panel" role="tabpanel" aria-live="polite"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why me</span>
+      <h2>Not just a VA — someone who has actually run operations</h2>
+      <p>Before freelancing, I managed high-pressure operations at an international airport and ran a full restaurant. I know how to keep complex work organized, on time, and calm under pressure.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="ic">01</div><div class="k">Systems, not chaos</div><p>I build repeatable workflows and automations so tasks get done the same reliable way every time — not reinvented each week.</p></div>
+      <div class="why-card reveal"><div class="ic">02</div><div class="k">Trusted under pressure</div><p>Years of aviation and hospitality operations mean deadlines, escalations, and moving parts don't rattle me.</p></div>
+      <div class="why-card reveal"><div class="ic">03</div><div class="k">Clear communication</div><p>You'll always know what's done, what's next, and where things stand. No chasing, no guessing.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Experience</span>
+      <h2>A decade of keeping things running</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-item reveal"><div class="tl-when">2025 — 2026</div><div class="tl-what"><h3>Virtual Assistant — Freelance (Remote)</h3><div class="org">Administrative, marketing &amp; automation support</div><p>Manage day-to-day admin and marketing workflows for clients, maintain CRM records and pipelines, set up automated follow-up sequences, and prepare documents and creatives — keeping every task accurate and on schedule.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-when">2021 — 2025</div><div class="tl-what"><h3>Operations Manager</h3><div class="org">Botchog's Restaurant</div><p>Oversaw daily operations across departments, built staff schedules and manpower allocation, supervised front-of-house and kitchen teams, and resolved escalated concerns while protecting service quality.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-when">2015 — 2020</div><div class="tl-what"><h3>Airport Officer</h3><div class="org">Emirates Group DNATA, Dubai</div><p>Coordinated passenger service operations during check-in, boarding, and arrivals in a high-volume international airport, supervised service agents, and managed time-sensitive cross-team communication.</p></div></div>
+      <div class="tl-item reveal"><div class="tl-when">Education</div><div class="tl-what"><h3>Bachelor's Degree in Information Technology</h3><div class="org">The foundation behind the systems &amp; automation work</div></div></div>
+    </div>
+    <!-- Full list only appears when the page is printed / saved as PDF -->
+    <div class="print-only" id="printList"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Let's work together</span>
+    <h2>Tell me what's eating your week</h2>
+    <p>Pick a specialization above, then send me the details. I'll show you exactly what I can take off your plate — and I'm happy to start with a short paid trial so you can see the fit first.</p>
+    <div class="contact-row">
+      <a href="mailto:jes.broncano@gmail.com" class="btn">Email me →</a>
+      <a href="tel:+639270020443" class="btn ghost">Call / message</a>
+    </div>
+    <div class="contact-meta">
+      <a href="mailto:jes.broncano@gmail.com">jes.broncano@gmail.com</a>
+      <a href="tel:+639270020443">(+63) 927 002 0443</a>
+      <span>Muntinlupa City, Metro Manila</span>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">© <span id="yr"></span> Jesmer Broncano · Virtual Assistant</div></footer>
+
+<script>
+  const specs=[
+    {tab:"General Admin",title:"General Administrative VA",pitch:"Calendar, inbox, data, and documents — handled, so your day runs itself.",does:["Calendar & schedule management","Email & inbox management","Data entry & record keeping","Document & presentation prep","CRM upkeep & task coordination"],tools:["Google Workspace","MS Office","Trello","Asana","Notion","Zapier","Canva"]},
+    {tab:"E-commerce",title:"E-commerce VA",pitch:"Your store — listed, fulfilled, and growing across Shopify, WooCommerce, Etsy & Amazon.",does:["Product listings & optimization","Order processing & fulfillment","Amazon Seller Central management","Product & keyword research","Email & ad campaigns","Product image editing"],tools:["Shopify","WooCommerce","Etsy","Amazon Seller Central","Helium 10","Keepa","ShipStation","DSers","Klaviyo","Photoshop"]},
+    {tab:"Social Media",title:"Social Media Management VA",pitch:"Content, community, and Meta ads that turn followers into customers.",does:["Content creation & copywriting","Content calendars & scheduling","Meta ads (Facebook & Instagram)","Community & DM management","Graphic & short-form video","Analytics & reporting"],tools:["Meta Business Suite","Ads Manager","Hootsuite","Metricool","ManyChat","Canva","CapCut","Photoshop"]},
+    {tab:"Digital Marketing",title:"Digital Marketing VA",pitch:"Funnels, automation, and campaigns that turn leads into customers.",does:["Marketing automation & CRM setup","Sales funnels & landing pages","Email nurture sequences","Paid ads (Meta & Google)","On-page SEO & keyword research","Conversion tracking & reporting"],tools:["HubSpot","GoHighLevel","ClickFunnels","Elementor","WordPress","SEMrush","Ahrefs","Zapier","n8n"]},
+    {tab:"AI & Automation",title:"AI & Automation VA",pitch:"No-code automations and AI that erase the repetitive work.",does:["No-code workflows in Zapier & n8n","CRM system flows & pipelines","Chatbot & DM automation","Automated email sequences","AI content & research","End-to-end funnel automation"],tools:["Zapier","n8n","ManyChat","ChatGPT","Claude","Gemini","HubSpot","GoHighLevel"]},
+    {tab:"Real Estate",title:"Real Estate VA",pitch:"Leads followed up, listings coordinated, and deals kept moving.",does:["Lead generation & nurturing","CRM management (Follow Up Boss)","Appointment setting","MLS listing support","Transaction docs & e-signing","Listing marketing"],tools:["Follow Up Boss","REDX","MLS","DocuSign","CallRail","BombBomb","Canva"]},
+    {tab:"Lead Gen & Outreach",title:"Lead Generation & Cold Outreach VA",pitch:"Targeted lists, cold campaigns, and booked meetings.",does:["Targeted prospect list building","Data enrichment & research","Cold email campaigns","LinkedIn outreach","Email list verification","Follow-up & appointment setting"],tools:["Apollo.io","Hunter.io","Clay","Instantly","Reply.io","Dripify","NeverBounce","Follow Up Boss"]}
+  ];
+
+  const tabsEl=document.getElementById('tabs'),panelEl=document.getElementById('panel');
+  let current=0;
+  function paint(i){
+    current=i;
+    [...tabsEl.children].forEach((b,idx)=>{const on=idx===i;b.classList.toggle('active',on);b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});
+    const s=specs[i];
+    panelEl.innerHTML='<h3>'+s.title+'</h3><p class="pitch">'+s.pitch+'</p><div class="cols"><div><span class="cap">What I handle</span><ul>'+s.does.map(d=>'<li>'+d+'</li>').join('')+'</ul></div><div><span class="cap">Tools I use</span><div class="chips">'+s.tools.map(t=>'<b>'+t+'</b>').join('')+'</div></div></div>';
+  }
+  // View Transitions API for a smooth crossfade when switching tabs (graceful fallback)
+  function render(i){
+    if(document.startViewTransition && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+      document.startViewTransition(()=>paint(i));
+    } else { paint(i); }
+  }
+  specs.forEach((s,i)=>{
+    const b=document.createElement('button');
+    b.className='tab';b.textContent=s.tab;b.setAttribute('role','tab');
+    b.addEventListener('click',()=>render(i));
+    b.addEventListener('keydown',e=>{
+      if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();const n=(i+(e.key==='ArrowRight'?1:-1)+specs.length)%specs.length;render(n);tabsEl.children[n].focus();}
+    });
+    tabsEl.appendChild(b);
+  });
+  paint(0);
+
+  // Build the print-only full list (all specializations expand when saved as PDF)
+  document.getElementById('printList').innerHTML='<h2>All Specializations</h2>'+specs.map(s=>'<h3>'+s.title+'</h3><div class="pt">'+s.does.join(' · ')+'</div><div class="pt"><em>Tools:</em> '+s.tools.join(', ')+'</div>').join('');
+
+  // ---------- Theme toggle (system-aware + remembered) ----------
+  const root=document.documentElement, tBtn=document.getElementById('themeBtn'), meta=document.getElementById('themeColor');
+  const sun='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>';
+  const moon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+  function currentDark(){return root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme:dark)').matches);}
+  function sync(){const d=currentDark();tBtn.innerHTML=d?sun:moon;meta.setAttribute('content',d?'#15171A':'#F6F5F2');}
+  try{const saved=localStorage.getItem('theme');if(saved)root.setAttribute('data-theme',saved);}catch(e){}
+  sync();
+  tBtn.addEventListener('click',()=>{
+    const next=currentDark()?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+    sync();
+  });
+
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  const mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
+  mt.addEventListener('click',()=>{const o=nl.classList.toggle('open');mt.setAttribute('aria-expanded',o)});
+  nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mt.setAttribute('aria-expanded',false)}));
+</script>
+</body>
+</html>
