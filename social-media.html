@@ -25,7 +25,7 @@
   "telephone":"+639270020443",
   "address":{"@type":"PostalAddress","addressLocality":"Muntinlupa City","addressRegion":"Metro Manila","addressCountry":"PH"},
   "alumniOf":{"@type":"CollegeOrUniversity","name":"Bachelor's Degree in Information Technology"},
-  "knowsAbout":["Social Media Management","Content Creation","Meta Ads","Community Management","Content Scheduling","Audience Growth","Analytics & Reporting"],
+  "knowsAbout":["Social Media Management","Content Creation","Meta Ads","Google Ads","Community Management","Content Scheduling","Audience Growth","Analytics & Reporting","WordPress","Salesforce","ManyChat","Claude","ChatGPT","Gemini","AI Tools","Marketing Automation"],
   "worksFor":{"@type":"Organization","name":"Freelance"}
 }
 </script>
@@ -164,7 +164,7 @@
   .svc p{font-size:.93rem;color:var(--muted)}
 
   .tools{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-  .tool-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .tool-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(208px,1fr));gap:26px 22px}
   .tool-col .cap{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin-bottom:12px;display:block}
   .chips{display:flex;flex-wrap:wrap;gap:8px}
   .chips b{font-family:'IBM Plex Mono',monospace;font-weight:400;font-size:.78rem;color:var(--muted);background:var(--tint);border-radius:6px;padding:6px 11px}
@@ -216,6 +216,54 @@
 
   footer{padding:28px 0;text-align:center;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
 
+
+  /* ---------- Selected work ---------- */
+  .work{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .case{display:grid;grid-template-columns:1.28fr 1fr;gap:46px;align-items:center;padding:38px 0;border-top:1px dashed var(--line)}
+  .case:first-of-type{border-top:0;padding-top:4px}
+  .case:nth-of-type(even) .screen{order:2}
+
+  .screen{border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--bg);box-shadow:var(--shadow)}
+  .chrome{display:flex;align-items:center;gap:12px;padding:9px 13px;background:var(--tint);border-bottom:1px solid var(--line)}
+  .chrome .dots{display:flex;gap:5px;flex:none}
+  .chrome .dots i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+  .chrome .url{flex:1;font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--muted);background:var(--bg);border:1px solid var(--line);border-radius:100px;padding:4px 12px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .chrome .live{flex:none;display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2)}
+  .chrome .live i{width:7px;height:7px;border-radius:50%;background:var(--accent-2);animation:pulse 2.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.78)}}
+
+  .viewport{position:relative;aspect-ratio:1900/910;background:#0E1114}
+  .viewport video{width:100%;height:100%;object-fit:cover;display:block}
+  .expand{position:absolute;inset:0;width:100%;height:100%;border:0;background:transparent;cursor:pointer;display:flex;align-items:flex-end;justify-content:flex-end;padding:14px;font-family:inherit}
+  .expand span{background:rgba(14,17,20,.82);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.05em;padding:8px 14px;border-radius:100px;opacity:0;transform:translateY(7px);transition:opacity .25s,transform .25s}
+  .screen:hover .expand span,.expand:focus-visible span{opacity:1;transform:none}
+  @media(hover:none){.expand span{opacity:1;transform:none}}
+
+  .case-meta{font-family:'IBM Plex Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent-2)}
+  .case-body h3{font-size:1.55rem;margin:11px 0 10px}
+  .case-body p{color:var(--muted);font-size:.96rem;margin-bottom:16px}
+
+  .work-sub{margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
+  .work-sub h3{font-size:1.5rem;margin-bottom:8px}
+  .work-sub p{color:var(--muted);font-size:.96rem;max-width:56ch;margin-bottom:24px}
+  .art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .print-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:18px}
+  .art{position:relative;display:block;width:100%;padding:0;border:1px solid var(--line);border-radius:13px;overflow:hidden;background:var(--bg);cursor:pointer;transition:transform .25s,box-shadow .25s}
+  .art:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .art img{width:100%;height:auto;display:block}
+  .art .cap{position:absolute;left:0;right:0;bottom:0;padding:30px 14px 12px;background:linear-gradient(transparent,rgba(10,12,14,.82));color:#fff;font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.06em;text-align:left}
+  .art .flag{position:absolute;top:11px;left:11px;font-family:'IBM Plex Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(14,17,20,.78);color:#fff;padding:4px 10px;border-radius:100px}
+
+  /* Lightbox */
+  .lb[hidden]{display:none}
+  .lb{position:fixed;inset:0;z-index:300;background:rgba(10,11,13,.92);backdrop-filter:blur(7px);display:grid;place-items:center;padding:26px;animation:lbIn .22s ease}
+  @keyframes lbIn{from{opacity:0}to{opacity:1}}
+  .lb-inner{display:flex;justify-content:center;width:100%}
+  .lb-inner video,.lb-inner img{max-width:min(1180px,94vw);max-height:80vh;width:auto;border-radius:11px;display:block;box-shadow:0 32px 64px -24px rgba(0,0,0,.75)}
+  .lb-cap{margin-top:15px;color:#E9E8E4;font-family:'IBM Plex Mono',monospace;font-size:.76rem;letter-spacing:.07em;text-align:center}
+  .lb-close{position:absolute;top:18px;right:20px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;font-size:1.35rem;line-height:1;cursor:pointer;font-family:inherit}
+  .lb-close:hover{background:rgba(255,255,255,.2)}
+
   /* ---------- Responsive ---------- */
   @media(max-width:880px){
     .hero-grid{grid-template-columns:1fr;gap:40px}
@@ -225,7 +273,14 @@
     .nav-links.open{display:flex}
     .nav-links a{padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
     .menu-toggle{display:block}
+    .case{grid-template-columns:1fr;gap:24px;padding:30px 0}
+    .case:nth-of-type(even) .screen{order:0}
+    .print-grid{grid-template-columns:1fr}
   }
+  @media(max-width:600px){
+    .art-grid{grid-template-columns:1fr}
+  }
+
   @media(prefers-reduced-motion:reduce){
     html{scroll-behavior:auto}
     .reveal{animation:none;opacity:1;transform:none}
@@ -237,6 +292,8 @@
     .task .check::after,.task .label{animation:none}
     .task .check::after{transform:scale(1)}
     .task .label{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--accent)}
+    .chrome .live i{animation:none}
+    .lb{animation:none}
     *{transition:none!important}
   }
   a:focus-visible,.btn:focus-visible,.theme-btn:focus-visible,.menu-toggle:focus-visible,.enter:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
@@ -244,7 +301,8 @@
   /* ---------- Print: clean one-page CV ---------- */
   @media print{
     :root{--bg:#fff;--surface:#fff;--ink:#000;--muted:#333;--line:#ccc}
-    .gate,header,.progress,.hero-cta,.theme-btn,.menu-toggle,.contact-row,footer,.nav-right,.hero .aura,.plate,.marquee{display:none!important}
+    .gate,header,.progress,.hero-cta,.theme-btn,.menu-toggle,.contact-row,footer,.nav-right,.hero .aura,.plate,.marquee,.screen,.work-sub,.lb{display:none!important}
+    .case{grid-template-columns:1fr;gap:4px;padding:10px 0}
     section{padding:16px 0;break-inside:avoid}
     .hero{padding:8px 0}
     .reveal{opacity:1!important;transform:none!important}
@@ -274,6 +332,7 @@
     <div class="nav-right">
       <nav class="nav-links" id="navLinks">
         <a href="#services">What I do</a>
+        <a href="#work">Work</a>
         <a href="#tools">Tools</a>
         <a href="#testimonials">Reviews</a>
         <a href="#experience">Experience</a>
@@ -296,7 +355,7 @@
       <p class="lede">I'm Jesmer, a social media VA who plans, creates, and posts content that keeps your brand active and growing across Facebook, Instagram, and TikTok — while you focus on running the business.</p>
       <div class="hero-cta">
         <a href="#contact" class="btn">Let's talk</a>
-        <a href="#services" class="btn ghost">See what I handle</a>
+        <a href="#work" class="btn ghost">See my work</a>
       </div>
       <div class="stats">
         <div class="stat"><b>3</b><span>Platforms: FB · IG · TikTok</span></div>
@@ -335,6 +394,119 @@
   </div>
 </section>
 
+<!-- SELECTED WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Selected work</span>
+      <h2>Live sites, and the content that runs on them</h2>
+      <p>These are real client builds, not mockups &mdash; every preview below is a recording of the site as it actually works. Click any one to watch the full walkthrough.</p>
+    </div>
+
+    <article class="case reveal">
+      <div class="screen">
+        <div class="chrome" aria-hidden="true">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="url">aqualitpools.com</span>
+          <span class="live"><i></i>Live</span>
+        </div>
+        <div class="viewport">
+          <video autoplay muted loop playsinline preload="none" poster="assets/work/aqualit-poster.jpg" data-src="assets/work/aqualit-walkthrough.mp4" aria-label="Walkthrough of the AquaLit Pool Care website"></video>
+          <button class="expand" data-video="assets/work/aqualit-walkthrough.mp4" data-title="AquaLit Pool Care &amp; Automation — site walkthrough"><span>Watch full size ↗</span></button>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="case-meta">Pool service &middot; Spring, Texas</span>
+        <h3>AquaLit Pool Care &amp; Automation</h3>
+        <p>A full service site for a pool care and automation company &mdash; cleaning, maintenance, repairs, remodels and automation, each with its own page and its own quote request. Paired with a Facebook Messenger assistant that sends a pool-care checklist on request and logs every enquiry to a live spreadsheet, so nothing sits unanswered overnight.</p>
+        <div class="chips"><b>Website build</b><b>Messenger automation</b><b>Lead capture</b><b>Google Sheets</b></div>
+      </div>
+    </article>
+
+    <article class="case reveal">
+      <div class="screen">
+        <div class="chrome" aria-hidden="true">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="url">eyesonshades.com</span>
+          <span class="live"><i></i>Live</span>
+        </div>
+        <div class="viewport">
+          <video autoplay muted loop playsinline preload="none" poster="assets/work/eyesonshades-poster.jpg" data-src="assets/work/eyesonshades-walkthrough.mp4" aria-label="Walkthrough of the Eyes on Shades website"></video>
+          <button class="expand" data-video="assets/work/eyesonshades-walkthrough.mp4" data-title="Eyes on Shades — site walkthrough"><span>Watch full size ↗</span></button>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="case-meta">Window treatments &middot; Houston, Texas</span>
+        <h3>Eyes on Shades</h3>
+        <p>A product-led site for an authorised Hunter Douglas dealer, built so homeowners can browse the full range before they ever pick up the phone. It also runs Daisy, an AI design consultant that answers questions in the visitor's own language and turns the conversation into a booked in-home consultation.</p>
+        <div class="chips"><b>Website build</b><b>AI design consultant</b><b>Product catalogue</b><b>Consultation booking</b></div>
+      </div>
+    </article>
+
+    <article class="case reveal">
+      <div class="screen">
+        <div class="chrome" aria-hidden="true">
+          <span class="dots"><i></i><i></i><i></i></span>
+          <span class="url">thachinsuranceagency.com</span>
+          <span class="live"><i></i>Live</span>
+        </div>
+        <div class="viewport">
+          <video autoplay muted loop playsinline preload="none" poster="assets/work/thach-poster.jpg" data-src="assets/work/thach-walkthrough.mp4" aria-label="Walkthrough of the Aaron Thach Insurance Agency website"></video>
+          <button class="expand" data-video="assets/work/thach-walkthrough.mp4" data-title="Aaron Thach Insurance Agency — site walkthrough"><span>Watch full size ↗</span></button>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="case-meta">Farmers agency &middot; Pacifica, California</span>
+        <h3>Aaron Thach Insurance Agency</h3>
+        <p>A full set of service pages covering auto, home, life, commercial, umbrella and business coverage &mdash; with a life insurance needs calculator, quote forms that validate the visitor's ZIP code before they hit send, and every submission landing in a live lead sheet the team works from each morning.</p>
+        <div class="chips"><b>Website build</b><b>Quote forms</b><b>Lead pipeline</b><b>Local SEO</b></div>
+      </div>
+    </article>
+
+    <div class="work-sub reveal">
+      <h3>The content that runs on them</h3>
+      <p>Social graphics and print collateral designed in each brand's own palette and type &mdash; so the feed, the site and the printed piece all look like the same company.</p>
+
+      <div class="art-grid">
+        <button class="art" data-image="assets/work/eos-process-post.jpg" data-title="Eyes on Shades — process post, Instagram">
+          <img src="assets/work/eos-process-post.jpg" alt="Eyes on Shades Instagram post explaining the custom window treatment process" loading="lazy" width="1080" height="1350">
+          <span class="cap">Eyes on Shades &middot; Instagram</span>
+        </button>
+        <button class="art" data-image="assets/work/villa-booking-post.jpg" data-title="Private villa booking post — concept">
+          <img src="assets/work/villa-booking-post.jpg" alt="Luxury private villa booking promotion post" loading="lazy" width="1080" height="1350">
+          <span class="flag">Concept</span>
+          <span class="cap">Hospitality &middot; booking promo</span>
+        </button>
+        <button class="art" data-image="assets/work/hotel-facilities-post.jpg" data-title="Hotel facilities post — concept">
+          <img src="assets/work/hotel-facilities-post.jpg" alt="Hotel facilities promotional post" loading="lazy" width="1080" height="1350">
+          <span class="flag">Concept</span>
+          <span class="cap">Hospitality &middot; facilities</span>
+        </button>
+      </div>
+
+      <div class="print-grid">
+        <button class="art" data-image="assets/work/thach-brochure-front.jpg" data-title="Aaron Thach Insurance Agency — brochure, outer panels">
+          <img src="assets/work/thach-brochure-front.jpg" alt="Aaron Thach Insurance Agency brochure outer panels" loading="lazy" width="1400" height="1082">
+          <span class="cap">Aaron Thach Insurance &middot; brochure, outside</span>
+        </button>
+        <button class="art" data-image="assets/work/thach-brochure-back.jpg" data-title="Aaron Thach Insurance Agency — brochure, inner panels">
+          <img src="assets/work/thach-brochure-back.jpg" alt="Aaron Thach Insurance Agency brochure inner panels" loading="lazy" width="1400" height="1082">
+          <span class="cap">Aaron Thach Insurance &middot; brochure, inside</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA LIGHTBOX -->
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Media viewer" hidden>
+  <button class="lb-close" id="lbClose" aria-label="Close viewer">&times;</button>
+  <div>
+    <div class="lb-inner" id="lbInner"></div>
+    <p class="lb-cap" id="lbCap"></p>
+  </div>
+</div>
+
 <!-- TOOLS -->
 <section class="tools" id="tools">
   <div class="wrap">
@@ -343,15 +515,16 @@
       <h2>Fluent in the tools that run modern social</h2>
     </div>
     <div class="tool-grid">
-      <div class="tool-col reveal"><span class="cap">Social &amp; ads</span><div class="chips"><b>Meta Business Suite</b><b>Ads Manager</b><b>Hootsuite</b><b>Metricool</b><b>ManyChat</b></div></div>
-      <div class="tool-col reveal"><span class="cap">Design &amp; content</span><div class="chips"><b>Canva</b><b>CapCut</b><b>Adobe Photoshop</b></div></div>
-      <div class="tool-col reveal"><span class="cap">Analytics</span><div class="chips"><b>Meta Insights</b><b>Metricool</b><b>Google Analytics</b></div></div>
+      <div class="tool-col reveal"><span class="cap">Social &amp; ads</span><div class="chips"><b>Meta Business Suite</b><b>Ads Manager</b><b>Google Ads</b><b>Hootsuite</b><b>Metricool</b><b>ManyChat</b></div></div>
+      <div class="tool-col reveal"><span class="cap">Content &amp; web</span><div class="chips"><b>Canva</b><b>CapCut</b><b>Adobe Photoshop</b><b>WordPress</b></div></div>
+      <div class="tool-col reveal"><span class="cap">AI assistants</span><div class="chips"><b>Claude</b><b>ChatGPT</b><b>Gemini</b></div></div>
+      <div class="tool-col reveal"><span class="cap">Analytics &amp; CRM</span><div class="chips"><b>Meta Insights</b><b>Google Analytics</b><b>Metricool</b><b>Salesforce</b></div></div>
     </div>
 
     <div class="marquee reveal" aria-hidden="true">
       <div class="marquee-track">
-        <b>Facebook</b><b>Instagram</b><b>TikTok</b><b>Meta Business Suite</b><b>Ads Manager</b><b>Hootsuite</b><b>Metricool</b><b>ManyChat</b><b>Canva</b><b>CapCut</b><b>Photoshop</b><b>Reels</b><b>Meta Insights</b><b>Google Analytics</b>
-        <b>Facebook</b><b>Instagram</b><b>TikTok</b><b>Meta Business Suite</b><b>Ads Manager</b><b>Hootsuite</b><b>Metricool</b><b>ManyChat</b><b>Canva</b><b>CapCut</b><b>Photoshop</b><b>Reels</b><b>Meta Insights</b><b>Google Analytics</b>
+        <b>Facebook</b><b>Instagram</b><b>TikTok</b><b>Meta Business Suite</b><b>Ads Manager</b><b>Google Ads</b><b>Hootsuite</b><b>Metricool</b><b>ManyChat</b><b>Canva</b><b>CapCut</b><b>Photoshop</b><b>WordPress</b><b>Claude</b><b>ChatGPT</b><b>Gemini</b><b>Salesforce</b><b>Meta Insights</b><b>Google Analytics</b>
+        <b>Facebook</b><b>Instagram</b><b>TikTok</b><b>Meta Business Suite</b><b>Ads Manager</b><b>Google Ads</b><b>Hootsuite</b><b>Metricool</b><b>ManyChat</b><b>Canva</b><b>CapCut</b><b>Photoshop</b><b>WordPress</b><b>Claude</b><b>ChatGPT</b><b>Gemini</b><b>Salesforce</b><b>Meta Insights</b><b>Google Analytics</b>
       </div>
     </div>
   </div>
@@ -471,6 +644,69 @@
   tBtn.addEventListener('click',()=>{const next=currentDark()?'light':'dark';root.setAttribute('data-theme',next);try{localStorage.setItem('theme',next);}catch(e){}sync();});
 
   document.getElementById('yr').textContent=new Date().getFullYear();
+  // ---------- Selected work: lazy in-view previews + lightbox ----------
+  (function(){
+    const reduce = matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const demos = Array.prototype.slice.call(document.querySelectorAll('.viewport video'));
+
+    function load(v){ if(!v.getAttribute('src') && v.dataset.src) v.setAttribute('src', v.dataset.src); }
+
+    if(demos.length && 'IntersectionObserver' in window){
+      const io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          const v = e.target;
+          if(e.isIntersecting){ load(v); if(!reduce){ const p = v.play(); if(p && p.catch) p.catch(function(){}); } }
+          else { v.pause(); }
+        });
+      }, {threshold:.35});
+      demos.forEach(function(v){ io.observe(v); });
+    } else {
+      demos.forEach(load);
+    }
+
+    const lb = document.getElementById('lb'),
+          inner = document.getElementById('lbInner'),
+          cap = document.getElementById('lbCap'),
+          closeBtn = document.getElementById('lbClose');
+    let lastFocus = null;
+
+    function open(node, label){
+      lastFocus = document.activeElement;
+      inner.innerHTML = '';
+      inner.appendChild(node);
+      cap.textContent = label || '';
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+    function close(){
+      inner.innerHTML = '';
+      lb.hidden = true;
+      document.body.style.overflow = '';
+      if(lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+
+    document.querySelectorAll('[data-video]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const v = document.createElement('video');
+        v.src = btn.dataset.video; v.controls = true; v.loop = true;
+        v.muted = true; v.playsInline = true; v.autoplay = !reduce;
+        open(v, btn.dataset.title);
+      });
+    });
+    document.querySelectorAll('[data-image]').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        const i = document.createElement('img');
+        i.src = btn.dataset.image; i.alt = btn.dataset.title || '';
+        open(i, btn.dataset.title);
+      });
+    });
+
+    closeBtn.addEventListener('click', close);
+    lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+    window.addEventListener('keydown', function(e){ if(e.key === 'Escape' && !lb.hidden) close(); });
+  })();
+
   const mt=document.getElementById('menuToggle'),nl=document.getElementById('navLinks');
   mt.addEventListener('click',()=>{const o=nl.classList.toggle('open');mt.setAttribute('aria-expanded',o)});
   nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mt.setAttribute('aria-expanded',false)}));
