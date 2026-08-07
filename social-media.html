@@ -290,6 +290,67 @@ a:focus-visible,button:focus-visible{
   .qa{grid-template-columns:1fr;gap:24px}
 }
 
+/* ---------- hover motion on every frame ---------- */
+.tile{
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),
+             box-shadow .35s ease, border-color .3s ease;
+}
+.tile img{transition:transform .6s cubic-bezier(.2,.7,.3,1)}
+figure:hover .tile,
+.car-slide:hover .tile{
+  transform:translateY(-5px);border-color:var(--violet);
+  box-shadow:0 16px 40px var(--glow);
+}
+figure:hover .tile-content img,
+.car-slide:hover .tile img{transform:scale(1.05)}
+
+/* ---------- video ---------- */
+.vids{align-items:start}
+.vid-frame{
+  position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;
+  background:#08060F;border:1px solid var(--rule);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),
+             box-shadow .35s ease, border-color .3s ease;
+}
+.vid-frame video{width:100%;height:100%;object-fit:contain;display:block}
+figure:hover .vid-frame{
+  transform:translateY(-5px);border-color:var(--violet);
+  box-shadow:0 16px 40px var(--glow);
+}
+
+/* ---------- panels for automation and email ---------- */
+.panel{
+  border:1px solid var(--rule);border-radius:14px;overflow:hidden;
+  background:var(--surface);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),
+             box-shadow .35s ease, border-color .3s ease;
+}
+.panel:hover{
+  transform:translateY(-6px);border-color:var(--violet);
+  box-shadow:0 20px 48px var(--glow);
+}
+.panel-bar{
+  display:flex;align-items:center;gap:7px;padding:11px 15px;
+  border-bottom:1px solid var(--rule);background:var(--wash);
+}
+.panel-bar i{width:9px;height:9px;border-radius:50%;background:var(--rule);display:block;flex-shrink:0}
+.panel:hover .panel-bar i:first-child{background:var(--violet)}
+.panel:hover .panel-bar i:nth-child(2){background:var(--coral)}
+.panel-bar em{
+  font-family:var(--mono);font-size:11px;font-style:normal;color:var(--muted);
+  letter-spacing:.06em;margin-left:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.panel .tile{border:0;border-radius:0;background:var(--wash)}
+.panel:hover .tile{transform:none;box-shadow:none}
+.panel .cap{padding:17px 18px 19px;margin:0}
+
+/* ---------- scroll reveal ---------- */
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .65s ease, transform .65s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.in{opacity:1;transform:none}
+
 /* ---------- carousels ---------- */
 .subhead{
   font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
@@ -488,6 +549,7 @@ main{transition:opacity .7s ease}
   .intro-eyebrow,.intro-name,.intro-line,.intro-cta,.intro-hint{
     opacity:1!important;transform:none!important;
   }
+  .reveal{opacity:1!important;transform:none!important}
   body.locked main{opacity:1}
 }
 </style>
@@ -990,21 +1052,21 @@ main{transition:opacity .7s ease}
 
     <h3 class="subhead">Single posts</h3>
     <div class="grid-3">
-      <figure>
+      <figure class="reveal">
         <span class="tile tile-content">
           <span class="ph">assets/portfolio/aqualit-static.jpg</span>
           <img src="assets/portfolio/aqualit-static.jpg" alt="AquaLit &middot; Facebook static" loading="lazy" onerror="this.remove()">
         </span>
         <figcaption class="cap"><b>AquaLit &middot; Facebook static</b><span>Service line-up and quote CTA</span></figcaption>
       </figure>
-      <figure>
+      <figure class="reveal">
         <span class="tile tile-content">
           <span class="ph">assets/portfolio/eyesonshades-carousel.jpg</span>
           <img src="assets/portfolio/eyesonshades-carousel.jpg" alt="Eyes on Shades &middot; Smart light control" loading="lazy" onerror="this.remove()">
         </span>
         <figcaption class="cap"><b>Eyes on Shades &middot; Smart light control</b><span>Motorised shades, feed post</span></figcaption>
       </figure>
-      <figure>
+      <figure class="reveal">
         <span class="tile tile-content">
           <span class="ph">assets/portfolio/coffee-vs-life-insurance.jpg</span>
           <img src="assets/portfolio/coffee-vs-life-insurance.jpg" alt="Aaron Thach &middot; Infographic" loading="lazy" onerror="this.remove()">
@@ -1017,31 +1079,68 @@ main{transition:opacity .7s ease}
 
 <section class="section" style="padding-top:0">
   <div class="wrap">
+    <h2>Video</h2>
+    <p class="intro">Scripted, edited and voiced end to end. Frames size themselves to whatever aspect the file is, so nothing gets cropped.</p>
+    <div class="grid-3 vids">
+      <figure class="reveal">
+        <div class="vid-frame">
+          <video src="assets/portfolio/video-aaronthach.mp4#t=0.1" controls preload="metadata" playsinline>
+            Your browser can't play this video.
+          </video>
+        </div>
+        <figcaption class="cap"><b>Aaron Thach Insurance Agency</b><span>Walkthrough of the site, the needs calculator and the quote form</span></figcaption>
+      </figure>
+      <figure class="reveal">
+        <div class="vid-frame">
+          <video src="assets/portfolio/video-aqualit.mp4#t=0.1" controls preload="metadata" playsinline>
+            Your browser can't play this video.
+          </video>
+        </div>
+        <figcaption class="cap"><b>AquaLit Pool Care</b><span>Short-form edit, scripted and voiced</span></figcaption>
+      </figure>
+      <figure class="reveal">
+        <div class="vid-frame">
+          <video src="assets/portfolio/video-eyesonshades.mp4#t=0.1" controls preload="metadata" playsinline>
+            Your browser can't play this video.
+          </video>
+        </div>
+        <figcaption class="cap"><b>Eyes on Shades</b><span>Short-form edit, scripted and voiced</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
     <h2>Automation</h2>
     <p class="intro">The part clients never see. These are the flows that catch a lead and route it somewhere useful, instead of letting it sit unread in an inbox.</p>
     <div class="grid-2">
-      <figure>
+      <figure class="panel reveal">
+        <div class="panel-bar"><i></i><i></i><i></i><em>Code.gs &mdash; Apps Script</em></div>
         <span class="tile tile-sys">
           <span class="ph">assets/portfolio/apps-script.jpg</span>
           <img src="assets/portfolio/apps-script.jpg" alt="Google Apps Script" loading="lazy" onerror="this.remove()">
         </span>
         <figcaption class="cap"><b>Google Apps Script</b><span>Catches every form submission and writes it to a live sheet, tagged by which signature or form it came from</span></figcaption>
       </figure>
-      <figure>
+      <figure class="panel reveal">
+        <div class="panel-bar"><i></i><i></i><i></i><em>Life Insurance Flow &mdash; LIVE</em></div>
         <span class="tile tile-sys">
           <span class="ph">assets/portfolio/manychat-flow.jpg</span>
           <img src="assets/portfolio/manychat-flow.jpg" alt="ManyChat" loading="lazy" onerror="this.remove()">
         </span>
-        <figcaption class="cap"><b>ManyChat</b><span>Life insurance conversation flow, running live</span></figcaption>
+        <figcaption class="cap"><b>ManyChat</b><span>A full conversation tree that qualifies the lead before a human ever picks it up</span></figcaption>
       </figure>
-      <figure>
+      <figure class="panel reveal">
+        <div class="panel-bar"><i></i><i></i><i></i><em>R&amp;C: Check-out Flow</em></div>
         <span class="tile tile-sys">
           <span class="ph">assets/portfolio/ghl-checkout.jpg</span>
           <img src="assets/portfolio/ghl-checkout.jpg" alt="GoHighLevel" loading="lazy" onerror="this.remove()">
         </span>
-        <figcaption class="cap"><b>GoHighLevel</b><span>Checkout flow that branches by purchase tier, tags the contact and fires a different welcome email for each</span></figcaption>
+        <figcaption class="cap"><b>GoHighLevel</b><span>Branches by purchase tier, tags the contact and fires a different welcome email for each</span></figcaption>
       </figure>
-      <figure>
+      <figure class="panel reveal">
+        <div class="panel-bar"><i></i><i></i><i></i><em>Deal Flow &mdash; Contract Intake</em></div>
         <span class="tile tile-sys">
           <span class="ph">assets/portfolio/n8n-workflow.jpg</span>
           <img src="assets/portfolio/n8n-workflow.jpg" alt="n8n and Claude" loading="lazy" onerror="this.remove()">
@@ -1057,14 +1156,16 @@ main{transition:opacity .7s ease}
     <h2>Email</h2>
     <p class="intro">Newsletters, and the code underneath them.</p>
     <div class="grid-2">
-      <figure>
+      <figure class="panel reveal">
+        <div class="panel-bar"><i></i><i></i><i></i><em>My emails &mdash; Flodesk</em></div>
         <span class="tile tile-sys">
           <span class="ph">assets/portfolio/flodesk-newsletter.jpg</span>
           <img src="assets/portfolio/flodesk-newsletter.jpg" alt="Flodesk" loading="lazy" onerror="this.remove()">
         </span>
-        <figcaption class="cap"><b>Flodesk</b><span>Earthquake watch newsletter, sent to the agency list</span></figcaption>
+        <figcaption class="cap"><b>Flodesk</b><span>Earthquake watch newsletter, built on a reusable template and sent to the agency list</span></figcaption>
       </figure>
-      <figure>
+      <figure class="panel reveal">
+        <div class="panel-bar"><i></i><i></i><i></i><em>test newsletter &mdash; Code</em></div>
         <span class="tile tile-sys">
           <span class="ph">assets/portfolio/mailchimp-html.jpg</span>
           <img src="assets/portfolio/mailchimp-html.jpg" alt="Mailchimp" loading="lazy" onerror="this.remove()">
@@ -1188,6 +1289,38 @@ main{transition:opacity .7s ease}
 </script>
 
 <script>
+(function(){
+  // video frames adopt the file's real aspect ratio once metadata loads
+  document.querySelectorAll('.vid-frame video').forEach(function(v){
+    v.addEventListener('loadedmetadata', function(){
+      if(v.videoWidth && v.videoHeight && v.parentNode){
+        v.parentNode.style.aspectRatio = v.videoWidth + ' / ' + v.videoHeight;
+      }
+    });
+  });
+
+  // staggered reveal on scroll
+  var items = document.querySelectorAll('.reveal');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if(reduce || !('IntersectionObserver' in window)){
+    items.forEach(function(el){ el.classList.add('in'); });
+    return;
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var row = e.target.parentNode ? Array.prototype.indexOf.call(e.target.parentNode.children, e.target) : 0;
+      e.target.style.transitionDelay = Math.min(row, 3) * 90 + 'ms';
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    });
+  }, {rootMargin:'0px 0px -60px 0px', threshold:0.08});
+
+  items.forEach(function(el){ io.observe(el); });
+})();
+
 (function(){
   document.querySelectorAll('.car-wrap').forEach(function(w){
     var track = w.querySelector('.car-track');
