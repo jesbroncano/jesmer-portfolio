@@ -290,6 +290,44 @@ a:focus-visible,button:focus-visible{
   .qa{grid-template-columns:1fr;gap:24px}
 }
 
+/* ---------- carousels ---------- */
+.subhead{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);font-weight:400;margin:0 0 22px;padding-bottom:12px;
+  border-bottom:1px solid var(--rule);
+}
+.carousels{display:grid;gap:46px;margin-bottom:64px}
+.car-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.car-head h4{font-family:var(--display);font-weight:700;font-size:19px;letter-spacing:-.02em;margin:0}
+.car-head .meta{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.03em}
+.car-wrap{position:relative}
+.car-track{
+  display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;-ms-overflow-style:none;padding:2px;
+}
+.car-track::-webkit-scrollbar{display:none}
+.car-slide{flex:0 0 calc((100% - 28px)/3);scroll-snap-align:start}
+.car-1x1 .car-slide .tile{aspect-ratio:1/1}
+.car-4x5 .car-slide .tile{aspect-ratio:4/5}
+.car-slide .tile img{object-position:center}
+.car-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:5;
+  width:40px;height:40px;border-radius:50%;border:1px solid var(--rule);
+  background:var(--surface);color:var(--text);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 14px rgba(0,0,0,.14);transition:all .18s ease;
+}
+.car-btn:hover{border-color:var(--violet);color:var(--violet)}
+.car-btn:disabled{opacity:0;pointer-events:none}
+.car-prev{left:-14px}
+.car-next{right:-14px}
+.car-btn svg{width:16px;height:16px}
+@media(max-width:900px){.car-slide{flex-basis:calc((100% - 14px)/2)}}
+@media(max-width:600px){
+  .car-slide{flex-basis:100%}
+  .car-prev{left:6px}.car-next{right:6px}
+}
+
 /* ---------- media tiles ---------- */
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
@@ -804,7 +842,153 @@ main{transition:opacity .7s ease}
 <section class="section" style="padding-top:0">
   <div class="wrap">
     <h2>Content</h2>
-    <p class="intro">Statics and carousels, exactly as published.</p>
+    <p class="intro">Everything here ran on a live client account. Swipe the carousels the way a customer would in feed.</p>
+
+    <h3 class="subhead">Carousels</h3>
+    <div class="carousels">
+      <div>
+        <div class="car-head">
+          <h4>Life insurance 101</h4>
+          <span class="meta">Aaron Thach &middot; 6 slides</span>
+        </div>
+        <div class="car-wrap car-1x1">
+          <button class="car-btn car-prev" type="button" aria-label="Previous slides"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="car-track">
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aaronthach-1.jpg</span>
+              <img src="assets/portfolio/car-aaronthach-1.jpg" alt="Life insurance 101 carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aaronthach-2.jpg</span>
+              <img src="assets/portfolio/car-aaronthach-2.jpg" alt="Life insurance 101 carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aaronthach-3.jpg</span>
+              <img src="assets/portfolio/car-aaronthach-3.jpg" alt="Life insurance 101 carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aaronthach-4.jpg</span>
+              <img src="assets/portfolio/car-aaronthach-4.jpg" alt="Life insurance 101 carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aaronthach-5.jpg</span>
+              <img src="assets/portfolio/car-aaronthach-5.jpg" alt="Life insurance 101 carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aaronthach-6.jpg</span>
+              <img src="assets/portfolio/car-aaronthach-6.jpg" alt="Life insurance 101 carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          </div>
+          <button class="car-btn car-next" type="button" aria-label="Next slides"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+
+      <div>
+        <div class="car-head">
+          <h4>Not all pool care is created equal</h4>
+          <span class="meta">AquaLit &middot; 6 slides</span>
+        </div>
+        <div class="car-wrap car-4x5">
+          <button class="car-btn car-prev" type="button" aria-label="Previous slides"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="car-track">
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aqualit-1.jpg</span>
+              <img src="assets/portfolio/car-aqualit-1.jpg" alt="AquaLit services carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aqualit-2.jpg</span>
+              <img src="assets/portfolio/car-aqualit-2.jpg" alt="AquaLit services carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aqualit-3.jpg</span>
+              <img src="assets/portfolio/car-aqualit-3.jpg" alt="AquaLit services carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aqualit-4.jpg</span>
+              <img src="assets/portfolio/car-aqualit-4.jpg" alt="AquaLit services carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aqualit-5.jpg</span>
+              <img src="assets/portfolio/car-aqualit-5.jpg" alt="AquaLit services carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-aqualit-6.jpg</span>
+              <img src="assets/portfolio/car-aqualit-6.jpg" alt="AquaLit services carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          </div>
+          <button class="car-btn car-next" type="button" aria-label="Next slides"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+
+      <div>
+        <div class="car-head">
+          <h4>Your home on autopilot</h4>
+          <span class="meta">Eyes on Shades &middot; 5 slides</span>
+        </div>
+        <div class="car-wrap car-1x1">
+          <button class="car-btn car-prev" type="button" aria-label="Previous slides"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+          <div class="car-track">
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-eyesonshades-1.jpg</span>
+              <img src="assets/portfolio/car-eyesonshades-1.jpg" alt="PowerView carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-eyesonshades-2.jpg</span>
+              <img src="assets/portfolio/car-eyesonshades-2.jpg" alt="PowerView carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-eyesonshades-3.jpg</span>
+              <img src="assets/portfolio/car-eyesonshades-3.jpg" alt="PowerView carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-eyesonshades-4.jpg</span>
+              <img src="assets/portfolio/car-eyesonshades-4.jpg" alt="PowerView carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          <div class="car-slide">
+            <span class="tile">
+              <span class="ph">car-eyesonshades-5.jpg</span>
+              <img src="assets/portfolio/car-eyesonshades-5.jpg" alt="PowerView carousel slide" loading="lazy" onerror="this.remove()">
+            </span>
+          </div>
+          </div>
+          <button class="car-btn car-next" type="button" aria-label="Next slides"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="subhead">Single posts</h3>
     <div class="grid-3">
       <figure>
         <span class="tile tile-content">
@@ -816,9 +1000,9 @@ main{transition:opacity .7s ease}
       <figure>
         <span class="tile tile-content">
           <span class="ph">assets/portfolio/eyesonshades-carousel.jpg</span>
-          <img src="assets/portfolio/eyesonshades-carousel.jpg" alt="Eyes on Shades &middot; Carousel cover" loading="lazy" onerror="this.remove()">
+          <img src="assets/portfolio/eyesonshades-carousel.jpg" alt="Eyes on Shades &middot; Smart light control" loading="lazy" onerror="this.remove()">
         </span>
-        <figcaption class="cap"><b>Eyes on Shades &middot; Carousel cover</b><span>Smart light control series</span></figcaption>
+        <figcaption class="cap"><b>Eyes on Shades &middot; Smart light control</b><span>Motorised shades, feed post</span></figcaption>
       </figure>
       <figure>
         <span class="tile tile-content">
@@ -1004,6 +1188,34 @@ main{transition:opacity .7s ease}
 </script>
 
 <script>
+(function(){
+  document.querySelectorAll('.car-wrap').forEach(function(w){
+    var track = w.querySelector('.car-track');
+    var prev  = w.querySelector('.car-prev');
+    var next  = w.querySelector('.car-next');
+    if(!track || !prev || !next) return;
+
+    function step(){
+      var s = track.querySelector('.car-slide');
+      return s ? s.getBoundingClientRect().width + 14 : 280;
+    }
+    function sync(){
+      var max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft >= max - 4;
+    }
+    prev.addEventListener('click', function(){
+      track.scrollBy({left:-step(), behavior:'smooth'});
+    });
+    next.addEventListener('click', function(){
+      track.scrollBy({left:step(), behavior:'smooth'});
+    });
+    track.addEventListener('scroll', sync, {passive:true});
+    window.addEventListener('resize', sync);
+    sync();
+  });
+})();
+
 (function(){
   var btn=document.getElementById('themeBtn');
   if(!btn) return;
