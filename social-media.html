@@ -199,6 +199,7 @@ a:focus-visible,button:focus-visible{
 .stat .v{
   font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,44px);
   letter-spacing:-.03em;line-height:1;display:block;margin-bottom:8px;
+  font-variant-numeric:tabular-nums;
 }
 .stat .k{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.04em}
 @media(max-width:760px){.proof-grid{grid-template-columns:1fr 1fr;gap:24px}}
@@ -1446,6 +1447,49 @@ main{transition:opacity .7s ease}
   }, {rootMargin:'0px 0px -60px 0px', threshold:0.08});
 
   items.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var stats = document.querySelectorAll('.stat .v');
+  if(!stats.length) return;
+
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  if(reduce || !('IntersectionObserver' in window) || !window.requestAnimationFrame) return;
+
+  var targets = [];
+  stats.forEach(function(el){
+    var m = el.textContent.trim().match(/^(\d+)(.*)$/);
+    if(!m) return;
+    el.setAttribute('data-target', m[1]);
+    el.setAttribute('data-suffix', m[2]);
+    el.textContent = '0' + m[2];
+    targets.push(el);
+  });
+  if(!targets.length) return;
+
+  function count(el){
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var dur = 1000, start = 0;
+    function frame(t){
+      if(!start) start = t;
+      var p = Math.min((t - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(eased * target) + suffix;
+      if(p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      count(e.target);
+      io.unobserve(e.target);
+    });
+  }, {threshold:0.5});
+
+  targets.forEach(function(el){ io.observe(el); });
 })();
 
 (function(){
